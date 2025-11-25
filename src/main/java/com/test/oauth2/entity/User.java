@@ -14,8 +14,8 @@ public class User {
     @Id
     @SequenceGenerator(name = "seqUserGen", allocationSize = 1, sequenceName = "seqUser")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqUserGen")
-    private Long seq;
     private String username;
+    private String name;
     private String email;
     private String role;
     private String provider;

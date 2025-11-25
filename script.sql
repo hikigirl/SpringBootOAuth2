@@ -15,3 +15,7 @@ create table tblUser (
     providerid varchar2(100) not null --각 OAuth2 공급자에서 발급하는 고유 사용자 ID
 );
 create sequence seqUser;
+
+commit;
+
+select * from tblUser;
