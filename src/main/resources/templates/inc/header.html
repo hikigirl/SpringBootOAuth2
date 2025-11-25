@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 <body>
 <!-- header.html -->
     <header th:fragment="menu">
         <h1>Spring Boot <small>OAuth2</small></h1>
         <ul>
             <li><a href="/">Index</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/member">Member</a></li>
+            <th:block sec:authorize="isAnonymous()">
+                <li><a href="/login">Login</a></li>
+            </th:block>
+            <th:block sec:authorize="isAuthenticated()">
+                <li><a href="/member">Member</a></li>
+            </th:block>
         </ul>
     </header>
 

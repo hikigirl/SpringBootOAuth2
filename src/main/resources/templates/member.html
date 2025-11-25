@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Insert Title Here</title>
@@ -10,7 +11,11 @@
     <div th:replace="~{inc/header.html :: menu}"></div>
 
     <h2>Member</h2>
-    <p>시작페이지입니다.</p>
-
+    <p>회원 페이지입니다.</p>
+    <th:block sec:authorize="isAuthenticated()">
+        <div class="message" title="username" sec:authentication="name"></div>
+        <div class="message" title="CustomUserDetails" sec:authentication="principal"></div>
+        <div class="message" title="UserDTO" sec:authentication="principal.userDTO"></div>
+    </th:block>
 </body>
 </html>
