@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# OAuth2 보안 관련...
+google_OAuth2Key.json
+src/main/resources/application.yml

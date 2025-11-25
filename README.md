@@ -1,0 +1,13 @@
+# OAuth2
+### 파일생성
+- com.test.oauth2
+  - controller
+    - `MainController.java`
+  - config
+    - `SecurityConfig.java`
+- templates
+  - index.html
+  - login.html
+  - member.html
+- templates/inc
+    - header.html
